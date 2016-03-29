@@ -33,7 +33,10 @@ Partial Class frmMain
         Me.CallID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CallRxTone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabContacts = New System.Windows.Forms.TabPage()
+        Me.dgvContacts = New System.Windows.Forms.DataGridView()
         Me.tabMain.SuspendLayout()
+        Me.tabContacts.SuspendLayout()
+        CType(Me.dgvContacts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabMain
@@ -119,12 +122,21 @@ Partial Class frmMain
         '
         'tabContacts
         '
+        Me.tabContacts.Controls.Add(Me.dgvContacts)
         Me.tabContacts.Location = New System.Drawing.Point(4, 22)
         Me.tabContacts.Name = "tabContacts"
         Me.tabContacts.Size = New System.Drawing.Size(802, 485)
         Me.tabContacts.TabIndex = 6
         Me.tabContacts.Text = "Contacts"
         Me.tabContacts.UseVisualStyleBackColor = True
+        '
+        'dgvContacts
+        '
+        Me.dgvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvContacts.Location = New System.Drawing.Point(3, 8)
+        Me.dgvContacts.Name = "dgvContacts"
+        Me.dgvContacts.Size = New System.Drawing.Size(796, 474)
+        Me.dgvContacts.TabIndex = 0
         '
         'frmMain
         '
@@ -135,6 +147,8 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Text = "Form1"
         Me.tabMain.ResumeLayout(False)
+        Me.tabContacts.ResumeLayout(False)
+        CType(Me.dgvContacts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -151,4 +165,5 @@ Partial Class frmMain
     Friend WithEvents CallID As DataGridViewTextBoxColumn
     Friend WithEvents CallRxTone As DataGridViewTextBoxColumn
     Friend WithEvents tabContacts As TabPage
+    Friend WithEvents dgvContacts As DataGridView
 End Class
