@@ -34,6 +34,7 @@ Partial Class frmMain
         Me.CallRxTone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabContacts = New System.Windows.Forms.TabPage()
         Me.dgvContacts = New System.Windows.Forms.DataGridView()
+        Me.dlgOpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.tabMain.SuspendLayout()
         Me.tabContacts.SuspendLayout()
         CType(Me.dgvContacts, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,6 +139,12 @@ Partial Class frmMain
         Me.dgvContacts.Size = New System.Drawing.Size(796, 474)
         Me.dgvContacts.TabIndex = 0
         '
+        'dlgOpenFile
+        '
+        Me.dlgOpenFile.DefaultExt = "rdt"
+        Me.dlgOpenFile.FileName = "*.rdt"
+        Me.dlgOpenFile.Title = "Open Codeplug File..."
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,4 +173,5 @@ Partial Class frmMain
     Friend WithEvents CallRxTone As DataGridViewTextBoxColumn
     Friend WithEvents tabContacts As TabPage
     Friend WithEvents dgvContacts As DataGridView
+    Friend WithEvents dlgOpenFile As OpenFileDialog
 End Class

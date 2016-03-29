@@ -2,9 +2,12 @@
 
 Public Class frmMain
     Dim contactsList(1000, 4) As String
+    Dim filename As String
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tabMain.SelectedTab = tabContacts
+        dlgOpenFile.ShowDialog()
+        filename = dlgOpenFile.FileName
         getContacts()
     End Sub
 
@@ -16,7 +19,8 @@ Public Class frmMain
         Dim offset As Integer = &H61A5
         Dim recordlength As Integer = 36
         Dim records As Integer = 1000
-        Dim codeplug As New BinaryReader(File.Open("c:\users\post2\desktop\codeplug.rdt", FileMode.Open))
+        'Dim codeplug As New BinaryReader(File.Open("c:\users\post2\desktop\codeplug.rdt", FileMode.Open))
+        Dim codeplug As New BinaryReader(File.Open(filename, FileMode.Open))
 
         For recordindex = 1 To records
             codeplug.BaseStream.Seek((offset + (recordlength * (recordindex - 1))), SeekOrigin.Begin)
